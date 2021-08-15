@@ -1,0 +1,74 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background: #3f3f3f;
+    font-family: verdana;
+}
+
+h1{
+    color: #f5f827;
+    font-family: 'Amatic SC', cursive;
+    font-size: 45px;
+    position: relative;
+    left: 13em;
+}
+
+h3{
+    position: absolute;
+    font-family: 'Amatic SC', cursive;
+    color:#f5f827;
+    font-size: 30px;
+}
+
+h4{
+    font-family: 'Amatic SC', cursive;
+    font-size: 30px;
+    font-weight: bold;
+    color:#000000;
+}
+
+#myCanvas{
+    margin-left: 10px;
+    margin-top: 20px;
+    border: 5px solid #757713;
+    background: #fff;
+}
+
+.right{
+    float: right;
+    padding: 40px;
+}
+
+.box {
+    border: 3px solid #474b11;
+    border-radius: 10px;
+    width: 20em;
+    background-color: #cdcbd6;
+    margin-bottom: 50px;
+    padding: 10px;
+}
+
+#tools{
+    position: relative;
+    width: 150px;
+}
+
+#btnClear{
+    width: 70px;
+    padding: 8px;
+    border-radius: 10px;
+    border: 4px solid #f5f827;
+    font:15px tahoma;
+    background-color: #fff;
+    background-color: rgb(32, 32, 32);
+    color: white;
+}
+
+#btnClear:hover{
+    background-color: rgb(95, 95, 95);
+    color: white;
+    transition: 0.3s ease;
+}
