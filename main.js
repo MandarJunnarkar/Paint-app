@@ -26,6 +26,9 @@ window.onload=function()
     
     // Canvas
     context = document.getElementById('myCanvas').getContext("2d");
+    context.canvas.width = 900;
+    context.canvas.height = 500;
+    context.canvas.marginTop = 10;
     
     //Mouse movement
     document.onmousemove = handleMouseMove;
@@ -64,8 +67,7 @@ function handleDown(e)
     drawing = !drawing; 
     console.log(drawing);
     context.moveTo(e.clientX, e.clientY);
-    context.beginPath();
-     
+    context.beginPath(); 
 }
 
 function handleUp()
