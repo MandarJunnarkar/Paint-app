@@ -59,7 +59,7 @@ h4{
     width: 150px;
 }
 
-#btnClear{
+#btnClear, #btnSave{
     width: 70px;
     padding: 8px;
     border-radius: 10px;

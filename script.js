@@ -1,13 +1,13 @@
 // Canvas related Script
 window.addEventListener("load", () => {
-    document.addEventListener("mousedown", startPainting);
-    document.addEventListener("mouseup", stopPainting);
-    document.addEventListener("mousemove", sketch);
+	document.addEventListener("mousedown", startPainting);
+	document.addEventListener("mouseup", stopPainting);
+	document.addEventListener("mousemove", sketch);
 });
 document.getElementById("colorChange").addEventListener("change", changeColour);
 document.getElementById("btnClear").addEventListener("click", clearCanvas);
 document.getElementById("lineWidth").addEventListener("change", changeWidth);
-
+document.getElementById("btnSave").addEventListener("click", handleSave);
 
 const canvas = document.querySelector("#myCanvas");
 
@@ -15,8 +15,11 @@ const canvas = document.querySelector("#myCanvas");
 const ctx = canvas.getContext("2d");
 
 ctx.lineWidth = 5;
-ctx.lineCap = "round"
- ctx.strokeStyle = "#000";
+ctx.lineCap = "round";
+ctx.strokeStyle = "#000";
+
+ctx.rect(20, 20, 200, 200);
+ctx.stroke()
 
 // Stores the initial position of the cursor
 let coord = { x: 0, y: 0 };
@@ -29,52 +32,56 @@ let paint = false;
 // an event e is triggered to the coordinates where
 // the said event is triggered.
 function getPosition(event) {
-    coord.x = event.clientX - canvas.offsetLeft;
-    coord.y = event.clientY - canvas.offsetTop;
+	coord.x = event.clientX - canvas.offsetLeft;
+	coord.y = event.clientY - canvas.offsetTop;
 }
 
 // The following functions toggle the flag to start
 // and stop drawing
 function startPainting(event) {
-    paint = true;
-    getPosition(event);
+	paint = true;
+	getPosition(event);
 }
 function stopPainting() {
-    paint = false;
+	paint = false;
 }
 
-function changeColour(){
-    ctx.strokeStyle = document.getElementById('colorChange').value;
+function changeColour() {
+	ctx.strokeStyle = document.getElementById("colorChange").value;
 }
 
-function clearCanvas(){
-    ctx.clearRect(0,0, ctx.canvas.width, ctx.canvas.height); 
+function clearCanvas() {
+	ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
 }
 
-function changeWidth(){
-    ctx.lineWidth = document.getElementById('lineWidth').value;
+function changeWidth() {
+	ctx.lineWidth = document.getElementById("lineWidth").value;
 }
 
 function sketch(event) {
-    if (!paint) return;
-    ctx.beginPath();
+	if (!paint) return;
+	ctx.beginPath();
 
-    // The cursor to start drawing
-    // moves to this coordinate
-    ctx.moveTo(coord.x, coord.y);
+	// The cursor to start drawing
+	// moves to this coordinate
+	ctx.moveTo(coord.x, coord.y);
 
-    // The position of the cursor
-    // gets updated as we move the
-    // mouse around.
-    getPosition(event);
+	// The position of the cursor
+	// gets updated as we move the
+	// mouse around.
+	getPosition(event);
 
-    // A line is traced from start
-    // coordinate to this coordinate
-    ctx.lineTo(coord.x, coord.y);
+	// A line is traced from start
+	// coordinate to this coordinate
+	ctx.lineTo(coord.x, coord.y);
 
-     // Draws the line.
-     ctx.stroke();
-    }
+	// Draws the line.
+	ctx.stroke();
+}
 
-    
-
+function handleSave(){
+    let a = document.createElement("a");
+    a.href = canvas.toDataURL("image/png");
+    a.download = "rang_bhar_de.png";
+    a.click()
+}
