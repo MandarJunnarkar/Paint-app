@@ -59,6 +59,15 @@ h4{
     width: 150px;
 }
 
+#tools ul{
+    list-style: none;
+}
+
+#tools li{
+    display: inline-grid;
+    padding: 3px;
+}
+
 #btnClear, #btnSave{
     width: 70px;
     padding: 8px;
