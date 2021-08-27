@@ -102,6 +102,6 @@ function sketch(event) {
 function handleSave() {
 	let a = document.createElement("a");
 	a.href = canvas.toDataURL("image/png");
-	a.download = "rang_bhar_de.png";
+	a.download = "rangify.png";
 	a.click();
 }

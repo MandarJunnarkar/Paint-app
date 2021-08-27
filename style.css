@@ -74,6 +74,18 @@ h4 {
 	color: #6e3434;
 }
 
+.triangle-up {
+	width: 0;
+	height: 0;
+	border-left: 7px solid transparent;
+	border-right: 7px solid transparent;
+	border-bottom: 14px solid rgb(0, 0, 0);
+}
+
+.triangle-up:hover{
+	border-bottom: 14px solid #6e3434;
+}
+
 #btnClear,
 #btnSave {
 	width: 70px;
@@ -86,7 +98,7 @@ h4 {
 	color: white;
 }
 
-#btnClear:hover {
+#tools button:hover {
 	background-color: rgb(95, 95, 95);
 	color: white;
 	transition: 0.3s ease;

@@ -19,11 +19,11 @@
 			name="viewport"
 			content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width"
 		/>
-		<title>Rang Bhar De</title>
+		<title>Rangify</title>
 	</head>
 
 	<body>
-		<h1>RANG BHAR DE</h1>
+		<h1>RANGIFY</h1>
 		<div class="container">
 			<canvas id="myCanvas" width="900" height="500"></canvas>
 			<div id="saveArea">
@@ -53,6 +53,13 @@
 							<li id="circle-tool">
 								<i class="far fa-circle"></i>
 							</li>
+							<li id="triangle-tool">
+								<i class="triangle-up"></i>
+							</li>
+							<li id="circle-tool">
+								<i class="fas fa-fill-drip"></i>
+							</li>
+							
 						</ul>
 					</div>
 				</div>
@@ -60,7 +67,7 @@
 					<h4>Choose the Brush's width</h4>
 					<div id="tools">
 						<label for="lineWidth">Width: </label
-						><input type="range" id="lineWidth" min="1" max="10" step="1" />
+						><input type="range" id="lineWidth" min="1" max="40" step="1" />
 					</div>
 				</div>
 				<div class="box">
@@ -69,7 +76,6 @@
 						<button id="btnClear">Clear</button>
 					</div>
 				</div>
-				<h3>Right Click on Canvas to Save...</h3>
 			</div>
 		</div>
 		<script defer src="script.js"></script>
